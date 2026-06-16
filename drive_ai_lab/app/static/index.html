@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drive AI Lab</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <span class="logo">Drive AI Lab</span>
+    <div class="stats">
+      <div class="stat-item">Gen <span id="statGen">0</span></div>
+      <div class="stat-item">Best <span id="statBest">0</span></div>
+      <div class="stat-item">Alive <span id="statAlive">0</span></div>
+      <div class="stat-item">Success <span id="statSuccess">0%</span></div>
+      <div class="stat-item">Step <span id="statStep">0</span></div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="panel">
+        <h3>Run</h3>
+        <div class="btn-row">
+          <button id="btnStart" class="primary">▶ Start</button>
+          <button id="btnPause">⏸ Pause</button>
+          <button id="btnReset">↺ Reset</button>
+        </div>
+        <label for="speedSlider">Speed <span id="speedVal">1</span>×</label>
+        <input type="range" id="speedSlider" min="1" max="10" value="1" />
+      </section>
+
+      <section class="panel">
+        <h3>Mode</h3>
+        <div class="seg">
+          <button data-mode="edit" class="seg-btn active">Edit</button>
+          <button data-mode="sim" class="seg-btn">Simulate</button>
+        </div>
+      </section>
+
+      <section class="panel" id="paletteSection">
+        <h3>Tile Palette</h3>
+        <div class="palette">
+          <button class="tile-btn active" data-tile="0"><span class="sw t-empty"></span>Empty</button>
+          <button class="tile-btn" data-tile="1"><span class="sw t-road"></span>Road</button>
+          <button class="tile-btn" data-tile="2"><span class="sw t-building"></span>Building</button>
+          <button class="tile-btn" data-tile="3"><span class="sw t-barricade"></span>Barricade</button>
+          <button class="tile-btn" data-tile="4"><span class="sw t-start"></span>Start</button>
+          <button class="tile-btn" data-tile="5"><span class="sw t-goal"></span>Goal</button>
+        </div>
+
+        <h3 class="mt">Map</h3>
+        <div class="btn-row">
+          <button id="btnClear">Clear</button>
+          <button id="btnSave">Save</button>
+          <button id="btnLoad">Load</button>
+        </div>
+        <h3 class="mt">Samples</h3>
+        <div class="btn-col">
+          <button data-sample="straight">Straight road</button>
+          <button data-sample="cross">Intersection</button>
+          <button data-sample="maze">Maze</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3>Info</h3>
+        <p>Population <span id="cfgPop">-</span></p>
+        <p>Sensors <span id="cfgSensor">-</span></p>
+        <p>Mutation <span id="cfgMut">-</span></p>
+        <p>Tile size <span id="cfgTile">-</span></p>
+      </section>
+
+      <section class="panel">
+        <h3>History</h3>
+        <canvas id="histChart" width="220" height="110"></canvas>
+        <p class="muted small">best fitness per generation</p>
+      </section>
+    </aside>
+
+    <section class="sim-area">
+      <div class="canvas-wrap">
+        <canvas id="mapCanvas"></canvas>
+        <canvas id="carCanvas"></canvas>
+      </div>
+      <div class="legend">
+        <span class="lg t-road"></span>road
+        <span class="lg t-building"></span>building
+        <span class="lg t-barricade"></span>barricade
+        <span class="lg t-start"></span>start
+        <span class="lg t-goal"></span>goal
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>

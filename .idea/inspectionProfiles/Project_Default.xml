@@ -1,0 +1,31 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="fastapi" />
+          <option value="uvicorn" />
+          <option value="websockets" />
+          <option value="python-multipart" />
+          <option value="opencv-python" />
+          <option value="ultralytics" />
+          <option value="torch" />
+          <option value="torchvision" />
+          <option value="numpy" />
+          <option value="pillow" />
+          <option value="moviepy" />
+          <option value="scikit-image" />
+          <option value="matplotlib" />
+          <option value="sqlalchemy" />
+          <option value="python-dotenv" />
+          <option value="pydantic" />
+          <option value="jinja2" />
+          <option value="aiofiles" />
+          <option value="pytest" />
+          <option value="black" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
